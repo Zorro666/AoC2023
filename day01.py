@@ -1,28 +1,126 @@
 import aoc
 
-def increment(x):
-    return x + 1
+"""
+--- Day 1: Trebuchet?! ---
 
-def decrement(x):
-    return x - 1
+Something is wrong with global snow production, and you've been selected to take a look. 
+The Elves have even given you a map; on it, they've used stars to mark the top fifty locations that are likely to be having problems.
+
+You've been doing this long enough to know that to restore snow operations, you need to check all fifty stars by December 25th.
+
+Collect stars by solving puzzles. 
+Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first. 
+Each puzzle grants one star. 
+Good luck!
+
+You try to ask why they can't just use a weather machine ("not powerful enough") and where they're even sending you ("the sky") and why your map looks mostly blank ("you sure ask a lot of questions") and hang on did you just say the sky ("of course, where do you think snow comes from") when you realize that the Elves are already loading you into a trebuchet ("please hold still, we need to strap you in").
+
+As they're making the final adjustments, they discover that their calibration document (your puzzle input) has been amended by a very young Elf who was apparently just excited to show off her art skills. 
+Consequently, the Elves are having trouble reading the values on the document.
+
+The newly-improved calibration document consists of lines of text; each line originally contained a specific calibration value that the Elves now need to recover. 
+On each line, the calibration value can be found by combining the first digit and the last digit (in that order) to form a single two-digit number.
+
+For example:
+
+1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet
+
+In this example, the calibration values of these four lines are 12, 38, 15, and 77. 
+Adding these together produces 142.
+
+Consider your entire calibration document. 
+What is the sum of all of the calibration values?
+
+--- Part Two ---
+
+Your calculation isn't quite right. 
+
+It looks like some of the digits are actually spelled out with letters: one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
+
+Equipped with this new information, you now need to find the real first and last digit on each line. 
+For example:
+
+two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen
+
+In this example, the calibration values are 29, 83, 13, 24, 42, 14, and 76. 
+
+Adding these together produces 281.
+
+What is the sum of all of the calibration values?
+"""
 
 def solvePart1(lines):
+    result = 0
     for l in lines:
-        for w in l.split():
-            print(w)
+        number = 0
+        l = l.strip()
+        first = -1
+        last = -1
+        for c in l:
+            if c.isdigit():
+                if first == -1:
+                    first = int(c)
+                last = int(c)
+        if first != -1 and last != -1:
+            number = first * 10 + last
+        result += number
+    return result
 
 def solvePart2(lines):
+#one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
+    result = 0
     for l in lines:
-        ws = l.split()
+        number = 0
+        l = l.strip()
+        first = -1
+        last = -1
 
-def part1():
-    lines = aoc.parse("day01.txt")
-    solvePart1(lines)
+        for i in range(0,len(l)):
+            c = l[i]
+            digit = -1
+            if c.isdigit():
+                digit = int(c)
+            else:
+                substr = l[i:]
+                if substr.startswith("one"):
+                    digit = 1
+                if substr.startswith("two"): 
+                    digit = 2
+                if substr.startswith("three"):
+                    digit = 3
+                if substr.startswith("four"):    
+                    digit = 4           
+                if substr.startswith("five"):
+                    digit = 5
+                if substr.startswith("six"):
+                    digit = 6
+                if substr.startswith("seven"):
+                    digit = 7
+                if substr.startswith("eight"):
+                    digit = 8
+                if substr.startswith("nine"):
+                    digit = 9
+            if digit != -1:
+                if first == -1:
+                    first = digit
+                last = digit
 
-def part2():
-    lines = aoc.parse("day01.txt")
-    solvePart2(lines);
+        if first != -1 and last != -1:
+            number = first * 10 + last
+        result += number
+    return result
+
+def main():
+    aoc.run_day(1, solvePart1, 54081, solvePart2, 54649)
 
 if __name__ == '__main__':
-    aoc.run(1, 1, part1)
-    aoc.run(1, 2, part2)
+    main()

@@ -1,7 +1,7 @@
-import day01
+import day02
 import unittest
 
-class Day01(unittest.TestCase):
+class Day02(unittest.TestCase):
     def test_part1(self):
         lines = """
         1abc2
@@ -9,7 +9,7 @@ class Day01(unittest.TestCase):
         a1b2c3d4e5f
         treb7uchet
         """
-        self.assertEqual(day01.solvePart1(lines.splitlines()), 142)
+        self.assertEqual(day02.solvePart1(lines.splitlines()), 142)
     def test_part2(self):
         lines = """two1nine
         eightwothree
@@ -19,7 +19,7 @@ class Day01(unittest.TestCase):
         zoneight234
         7pqrstsixteen
         """
-        self.assertEqual(day01.solvePart2(lines.splitlines()), 281)
+        self.assertEqual(day02.solvePart2(lines.splitlines()), 281)
 
 if __name__ == '__main__':
     unittest.main()
