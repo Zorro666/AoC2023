@@ -3,23 +3,29 @@ import unittest
 
 class Day03(unittest.TestCase):
     def test_part1(self):
-        lines = """
-        1abc2
-        pqr3stu8vwx
-        a1b2c3d4e5f
-        treb7uchet
-        """
-        self.assertEqual(day03.solvePart1(lines.splitlines()), 142)
+        lines = """467..114..
+...*......
+..35..633.
+......#...
+617*......
+.....+.58.
+..592.....
+......755.
+...$.*....
+.664.598.."""
+        self.assertEqual(day03.solvePart1(lines.splitlines()), 4361)
     def test_part2(self):
-        lines = """two1nine
-        eightwothree
-        abcone2threexyz
-        xtwone3four
-        4nineeightseven2
-        zoneight234
-        7pqrstsixteen
-        """
-        self.assertEqual(day03.solvePart2(lines.splitlines()), 281)
+        lines = """467+.114..
++..*......
+..35..633.
+......#...
+617*......
+.....+.58.
+..592.....
+......755.
+...$.*....
+.664.598.."""
+        self.assertEqual(day03.solvePart2(lines.splitlines()), 467835)
 
 if __name__ == '__main__':
     unittest.main()
