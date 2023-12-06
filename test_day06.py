@@ -2,24 +2,14 @@ import day06
 import unittest
 
 class Day06(unittest.TestCase):
+    lines = """
+Time:      7  15   30
+Distance:  9  40  200
+        """
     def test_part1(self):
-        lines = """
-        1abc2
-        pqr3stu8vwx
-        a1b2c3d4e5f
-        treb7uchet
-        """
-        self.assertEqual(day06.solvePart1(lines.splitlines()), 142)
+        self.assertEqual(day06.solvePart1(self.lines.splitlines()), 288)
     def test_part2(self):
-        lines = """two1nine
-        eightwothree
-        abcone2threexyz
-        xtwone3four
-        4nineeightseven2
-        zoneight234
-        7pqrstsixteen
-        """
-        self.assertEqual(day06.solvePart2(lines.splitlines()), 281)
+        self.assertEqual(day06.solvePart2(self.lines.splitlines()), 71503)
 
 if __name__ == '__main__':
     unittest.main()
