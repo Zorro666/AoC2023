@@ -4,22 +4,47 @@ import unittest
 class Day12(unittest.TestCase):
     def test_part1(self):
         lines = """
-        1abc2
-        pqr3stu8vwx
-        a1b2c3d4e5f
-        treb7uchet
-        """
-        self.assertEqual(day12.solvePart1(lines.splitlines()), 142)
+???.### 1,1,3
+.??..??...?##. 1,1,3
+?#?#?#?#?#?#?#? 1,3,1,6
+????.#...#... 4,1,1
+????.######..#####. 1,6,5
+?###???????? 3,2,1
+"""
+        self.assertEqual(day12.solvePart1(lines.splitlines()), 21)
+    def test_countMatches(self):
+        tests = [
+("#.#.### 1,1,3", 1),
+("???.### 1,1,3", 1),
+(".??..??...?##. 1,1,3", 4),
+("?#?#?#?#?#?#?#? 1,3,1,6", 1),
+("????.#...#... 4,1,1", 1),
+("????.######..#####. 1,6,5", 4),
+("?###???????? 3,2,1", 10),
+                ]
+        for test in tests:
+            self.assertEqual(day12.countMatches(test[0]), test[1])
+    def test_countMatchesUnFolded(self):
+        tests = [
+("???.### 1,1,3", 1),
+(".??..??...?##. 1,1,3", 16384),
+("?#?#?#?#?#?#?#? 1,3,1,6", 1),
+("????.#...#... 4,1,1", 16),
+("????.######..#####. 1,6,5", 2500),
+("?###???????? 3,2,1", 506250),
+                ]
+        for test in tests:
+            self.assertEqual(day12.countMatchesUnFolded(test[0]), test[1])
     def test_part2(self):
-        lines = """two1nine
-        eightwothree
-        abcone2threexyz
-        xtwone3four
-        4nineeightseven2
-        zoneight234
-        7pqrstsixteen
-        """
-        self.assertEqual(day12.solvePart2(lines.splitlines()), 281)
+        lines = """
+???.### 1,1,3
+.??..??...?##. 1,1,3
+?#?#?#?#?#?#?#? 1,3,1,6
+????.#...#... 4,1,1
+????.######..#####. 1,6,5
+?###???????? 3,2,1
+"""
+        self.assertEqual(day12.solvePart2(lines.splitlines()), 525152)
 
 if __name__ == '__main__':
     unittest.main()
