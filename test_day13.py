@@ -2,24 +2,66 @@ import day13
 import unittest
 
 class Day13(unittest.TestCase):
+    def test_pattern_score_1(self):
+        lines = """
+#.##..##.
+..#.##.#.
+##......#
+##......#
+..#.##.#.
+..##..##.
+#.#.##.#.
+"""
+        self.assertEqual(day13.pattern_score(lines.splitlines(), False), 5)
+    def test_pattern_score_2(self):
+        lines = """
+#...##..#
+#....#..#
+..##..###
+#####.##.
+#####.##.
+..##..###
+#....#..#
+"""
+        self.assertEqual(day13.pattern_score(lines.splitlines(), True), 100)
     def test_part1(self):
         lines = """
-        1abc2
-        pqr3stu8vwx
-        a1b2c3d4e5f
-        treb7uchet
-        """
-        self.assertEqual(day13.solvePart1(lines.splitlines()), 142)
+#.##..##.
+..#.##.#.
+##......#
+##......#
+..#.##.#.
+..##..##.
+#.#.##.#.
+
+#...##..#
+#....#..#
+..##..###
+#####.##.
+#####.##.
+..##..###
+#....#..#
+"""
+        self.assertEqual(day13.solvePart1(lines.splitlines()), 405)
     def test_part2(self):
-        lines = """two1nine
-        eightwothree
-        abcone2threexyz
-        xtwone3four
-        4nineeightseven2
-        zoneight234
-        7pqrstsixteen
-        """
-        self.assertEqual(day13.solvePart2(lines.splitlines()), 281)
+        lines = """
+#.##..##.
+..#.##.#.
+##......#
+##......#
+..#.##.#.
+..##..##.
+#.#.##.#.
+
+#...##..#
+#....#..#
+..##..###
+#####.##.
+#####.##.
+..##..###
+#....#..#
+"""
+        self.assertEqual(day13.solvePart2(lines.splitlines()), 400)
 
 if __name__ == '__main__':
     unittest.main()
