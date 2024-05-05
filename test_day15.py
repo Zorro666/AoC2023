@@ -2,24 +2,11 @@ import day15
 import unittest
 
 class Day15(unittest.TestCase):
+    input = """rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7"""
     def test_part1(self):
-        lines = """
-        1abc2
-        pqr3stu8vwx
-        a1b2c3d4e5f
-        treb7uchet
-        """
-        self.assertEqual(day15.solvePart1(lines.splitlines()), 142)
+        self.assertEqual(day15.solvePart1(self.input.splitlines()), 1320)
     def test_part2(self):
-        lines = """two1nine
-        eightwothree
-        abcone2threexyz
-        xtwone3four
-        4nineeightseven2
-        zoneight234
-        7pqrstsixteen
-        """
-        self.assertEqual(day15.solvePart2(lines.splitlines()), 281)
+        self.assertEqual(day15.solvePart2(self.input.splitlines()), 145)
 
 if __name__ == '__main__':
     unittest.main()
