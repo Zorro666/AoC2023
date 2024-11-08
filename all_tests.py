@@ -15,6 +15,14 @@ import day14
 import day15
 import day16
 import day17
+import day18
+import day19
+import day20
+import day21
+import day22
+import day23
+import day24
+import day25
 import unittest
 
 class Day01(unittest.TestCase):
@@ -642,6 +650,189 @@ class Day17(unittest.TestCase):
 
     def test_part2(self):
         self.assertEqual(day17.solvePart2(self.lines.splitlines()), 94)
+
+class Day18(unittest.TestCase):
+    lines = """
+R 6 (#70c710)
+D 5 (#0dc571)
+L 2 (#5713f0)
+D 2 (#d2c081)
+R 2 (#59c680)
+D 2 (#411b91)
+L 5 (#8ceee2)
+U 2 (#caa173)
+L 1 (#1b58a2)
+U 2 (#caa171)
+R 2 (#7807d2)
+U 3 (#a77fa3)
+L 2 (#015232)
+U 2 (#7a21e3)
+"""
+    def test_part1(self):
+        self.assertEqual(day18.solvePart1(self.lines.splitlines()), 62)
+
+    def test_part2(self):
+        self.assertEqual(day18.solvePart2(self.lines.splitlines()), 952408144115)
+
+class Day19(unittest.TestCase):
+    lines = """
+2413432311323
+3215453535623
+3255245654254
+3446585845452
+4546657867536
+1438598798454
+4457876987766
+3637877979653
+4654967986887
+4564679986453
+1224686865563
+2546548887735
+4322674655533
+"""
+    def test_part1(self):
+        self.assertEqual(day19.solvePart1(self.lines.splitlines()), 102)
+
+    def test_part2(self):
+        self.assertEqual(day19.solvePart2(self.lines.splitlines()), 94)
+
+
+class Day20(unittest.TestCase):
+    lines = """
+2413432311323
+3215453535623
+3255245654254
+3446585845452
+4546657867536
+1438598798454
+4457876987766
+3637877979653
+4654967986887
+4564679986453
+1224686865563
+2546548887735
+4322674655533
+"""
+    def test_part1(self):
+        self.assertEqual(day20.solvePart1(self.lines.splitlines()), 102)
+
+    def test_part2(self):
+        self.assertEqual(day20.solvePart2(self.lines.splitlines()), 94)
+
+
+class Day21(unittest.TestCase):
+    lines = """
+2413432311323
+3215453535623
+3255245654254
+3446585845452
+4546657867536
+1438598798454
+4457876987766
+3637877979653
+4654967986887
+4564679986453
+1224686865563
+2546548887735
+4322674655533
+"""
+    def test_part1(self):
+        self.assertEqual(day21.solvePart1(self.lines.splitlines()), 102)
+
+    def test_part2(self):
+        self.assertEqual(day21.solvePart2(self.lines.splitlines()), 94)
+
+
+class Day22(unittest.TestCase):
+    lines = """
+2413432311323
+3215453535623
+3255245654254
+3446585845452
+4546657867536
+1438598798454
+4457876987766
+3637877979653
+4654967986887
+4564679986453
+1224686865563
+2546548887735
+4322674655533
+"""
+    def test_part1(self):
+        self.assertEqual(day22.solvePart1(self.lines.splitlines()), 102)
+
+    def test_part2(self):
+        self.assertEqual(day22.solvePart2(self.lines.splitlines()), 94)
+
+
+class Day23(unittest.TestCase):
+    lines = """
+2413432311323
+3215453535623
+3255245654254
+3446585845452
+4546657867536
+1438598798454
+4457876987766
+3637877979653
+4654967986887
+4564679986453
+1224686865563
+2546548887735
+4322674655533
+"""
+    def test_part1(self):
+        self.assertEqual(day23.solvePart1(self.lines.splitlines()), 102)
+
+    def test_part2(self):
+        self.assertEqual(day23.solvePart2(self.lines.splitlines()), 94)
+
+
+class Day24(unittest.TestCase):
+    lines = """
+2413432311323
+3215453535623
+3255245654254
+3446585845452
+4546657867536
+1438598798454
+4457876987766
+3637877979653
+4654967986887
+4564679986453
+1224686865563
+2546548887735
+4322674655533
+"""
+    def test_part1(self):
+        self.assertEqual(day24.solvePart1(self.lines.splitlines()), 102)
+
+    def test_part2(self):
+        self.assertEqual(day24.solvePart2(self.lines.splitlines()), 94)
+
+
+class Day25(unittest.TestCase):
+    lines = """
+2413432311323
+3215453535623
+3255245654254
+3446585845452
+4546657867536
+1438598798454
+4457876987766
+3637877979653
+4654967986887
+4564679986453
+1224686865563
+2546548887735
+4322674655533
+"""
+    def test_part1(self):
+        self.assertEqual(day25.solvePart1(self.lines.splitlines()), 102)
+
+    def test_part2(self):
+        self.assertEqual(day25.solvePart2(self.lines.splitlines()), 94)
+
 if __name__ == '__main__':
     unittest.main()
-
