@@ -29,7 +29,7 @@ class Day16(unittest.TestCase):
 .|....-|.\\
 ..//.|....
         """
-        self.assertEqual(day16.solvePart2(lines.splitlines()), 281)
+        self.assertEqual(day16.solvePart2(lines.splitlines()), 51)
 
 if __name__ == '__main__':
     unittest.main()

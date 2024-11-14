@@ -1,7 +1,6 @@
 import aoc
-import copy
 
-"""
+'''
 --- Day 16: The Floor Will Be Lava ---
 With the beam of light completely focused somewhere, the reindeer leads you deeper still into the Lava Production Facility.
 At some point, you realize that the steel facility walls have been replaced with cave, and the doorways are just cave, and the floor is cave, and you're pretty sure this is actually just a giant cave.
@@ -21,10 +20,10 @@ For example:
 .....|-...
 ........|.
 ..........
-.........\
+.........\\
 ..../.\\..
 .-.-/..|..
-.|....-|.\
+.|....-|.\\
 ..//.|....
 The beam enters in the top-left corner from the left and heading to the right.
 Then, its behavior depends on what it encounters as it moves:
@@ -45,15 +44,15 @@ A tile is energized if that tile has at least one beam pass through it, reflect 
 
 In the above example, here is how the beam of light bounces around the contraption:
 
->|<<<\....
+>|<<<\\....
 |v-.\^....
 .v...|->>>
 .v...v^.|.
 .v...v^...
-.v...v^..\
+.v...v^..\\
 .v../2\\..
 <->-/vv|..
-.|<<<2-|.\
+.|<<<2-|.\\
 .v//.|.v..
 Beams are only shown on empty tiles; arrows indicate the direction of the beams.
 If a tile contains beams moving in multiple directions, the number of distinct directions is shown instead.
@@ -86,15 +85,15 @@ To produce lava, you need to find the configuration that energizes as many tiles
 
 In the above example, this can be achieved by starting the beam in the fourth tile from the left in the top row:
 
-.|<2<\....
+.|<2<\\....
 |v-v\^....
 .v.v.|->>>
 .v.v.v^.|.
 .v.v.v^...
-.v.v.v^..\
+.v.v.v^..\\
 .v.v/2\\..
 <-2-/vv|..
-.|<<<2-|.\
+.|<<<2-|.\\
 .v//.|.v..
 Using this configuration, 51 tiles are energized:
 
@@ -110,7 +109,7 @@ Using this configuration, 51 tiles are energized:
 .#...#.#..
 
 Find the initial beam configuration that energizes the largest number of tiles; how many tiles are energized in that configuration?
-"""
+'''
 
 RAY_EMPTY = 0
 RAY_LEFT = 1
