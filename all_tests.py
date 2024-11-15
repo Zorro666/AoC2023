@@ -700,29 +700,29 @@ hdj{m>838:A,pv}
     def test_part2(self):
         self.assertEqual(day19.solvePart2(self.lines.splitlines()), 167409079868000)
 
-
 class Day20(unittest.TestCase):
-    lines = """
-2413432311323
-3215453535623
-3255245654254
-3446585845452
-4546657867536
-1438598798454
-4457876987766
-3637877979653
-4654967986887
-4564679986453
-1224686865563
-2546548887735
-4322674655533
+    lines1 = """
+broadcaster -> a, b, c
+%a -> b
+%b -> c
+%c -> inv
+&inv -> a
 """
-    def test_part1(self):
-        self.assertEqual(day20.solvePart1(self.lines.splitlines()), 102)
+    lines2 = """
+broadcaster -> a
+%a -> inv, con
+&inv -> b
+%b -> con
+&con -> rx
+"""
+    def test_part1_1(self):
+        self.assertEqual(day20.solvePart1(self.lines1.splitlines()), 32000000)
+
+    def test_part1_2(self):
+        self.assertEqual(day20.solvePart1(self.lines2.splitlines()), 11687500)
 
     def test_part2(self):
-        self.assertEqual(day20.solvePart2(self.lines.splitlines()), 94)
-
+        self.assertEqual(day20.solvePart2(self.lines2.splitlines()), 1)
 
 class Day21(unittest.TestCase):
     lines = """
