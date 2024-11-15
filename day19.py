@@ -146,15 +146,14 @@ def parse(lines):
                 value = 0
                 dest = None
                 if '<' in c[0] or '>' in c[0]:
-                    match c[0][0]:
-                        case "x":
+                    if c[0][0] == 'x':
                             part = X
-                        case "m":
-                            part = M
-                        case "a":
-                            part = A
-                        case "s":
-                            part = S
+                    elif c[0][0] == 'm':
+                        part = M
+                    elif c[0][0] == 'a':
+                        part = A
+                    elif c[0][0] == 's':
+                        part = S
                     if c[0][1] == '<':
                         test = TEST_LESS
                     else:
@@ -175,17 +174,16 @@ def parse(lines):
             for t in toks:
                 c = t.split('=')
                 value = int(c[1])
-                match c[0]:
-                    case 'x':
+                if c[0] == 'x':
                         part[2*X+0] = value
                         part[2*X+1] = value
-                    case 'm':
+                elif c[0] == 'm':
                         part[2*M+0] = value
                         part[2*M+1] = value
-                    case 'a':
+                elif c[0] == 'a':
                         part[2*A+0] = value
                         part[2*A+1] = value
-                    case 's':
+                elif c[0] == 's':
                         part[2*S+0] = value
                         part[2*S+1] = value
             parts.append(part)
