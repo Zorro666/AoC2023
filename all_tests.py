@@ -753,25 +753,20 @@ class Day21(unittest.TestCase):
 
 class Day22(unittest.TestCase):
     lines = """
-2413432311323
-3215453535623
-3255245654254
-3446585845452
-4546657867536
-1438598798454
-4457876987766
-3637877979653
-4654967986887
-4564679986453
-1224686865563
-2546548887735
-4322674655533
+2,0,5~2,2,5
+1,1,8~1,1,9
+0,0,2~2,0,2
+0,1,6~2,1,6
+0,0,4~0,2,4
+0,2,3~2,2,3
+1,0,1~1,2,1
 """
+
     def test_part1(self):
-        self.assertEqual(day22.solvePart1(self.lines.splitlines()), 102)
+        self.assertEqual(day22.solvePart1(self.lines.splitlines()), 5)
 
     def test_part2(self):
-        self.assertEqual(day22.solvePart2(self.lines.splitlines()), 94)
+        self.assertEqual(day22.solvePart2(self.lines.splitlines()), 7)
 
 
 class Day23(unittest.TestCase):
